@@ -1,3 +1,0 @@
-set(__QT_DEPLOY_TARGET_BoatPerformanceChart_FILE C:/Users/diana.cinca/Documents/Raymarine/build/BoatPerformanceChart.exe)
-set(__QT_DEPLOY_TARGET_BoatPerformanceChart_TYPE EXECUTABLE)
-set(__QT_DEPLOY_TARGET_BoatPerformanceChart_RUNTIME_DLLS C:/Qt/6.8.0/msvc2022_64/bin/Qt6Quickd.dll;C:/Qt/6.8.0/msvc2022_64/bin/Qt6OpenGLd.dll;C:/Qt/6.8.0/msvc2022_64/bin/Qt6Guid.dll;C:/Qt/6.8.0/msvc2022_64/bin/Qt6QmlMetad.dll;C:/Qt/6.8.0/msvc2022_64/bin/Qt6QmlWorkerScriptd.dll;C:/Qt/6.8.0/msvc2022_64/bin/Qt6QmlModelsd.dll;C:/Qt/6.8.0/msvc2022_64/bin/Qt6Qmld.dll;C:/Qt/6.8.0/msvc2022_64/bin/Qt6Networkd.dll;C:/Qt/6.8.0/msvc2022_64/bin/Qt6Cored.dll)

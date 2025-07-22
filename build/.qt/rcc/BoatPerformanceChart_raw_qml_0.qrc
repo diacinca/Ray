@@ -1,8 +1,0 @@
-<RCC>
-  <qresource prefix="/BoatPerformanceChart/">
-    <file alias="qml/main.qml">C:/Users/diana.cinca/Documents/Raymarine/qml/main.qml</file>
-    <file alias="qml/PerformanceChart.qml">C:/Users/diana.cinca/Documents/Raymarine/qml/PerformanceChart.qml</file>
-    <file alias="QML.qrc">C:/Users/diana.cinca/Documents/Raymarine/QML.qrc</file>
-  </qresource>
-</RCC>
-

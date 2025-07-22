@@ -1,6 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>qml/main.qml</file>
-        <file>qml/PerformanceChart.qml</file>
-    </qresource>
-</RCC>
