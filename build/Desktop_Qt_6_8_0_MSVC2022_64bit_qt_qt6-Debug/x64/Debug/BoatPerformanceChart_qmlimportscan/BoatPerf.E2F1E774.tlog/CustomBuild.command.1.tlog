@@ -1,0 +1,32 @@
+^C:\USERS\DIANA.CINCA\DOCUMENTS\RAYMARINE\BUILD\DESKTOP_QT_6_8_0_MSVC2022_64BIT_QT_QT6-DEBUG\CMAKEFILES\7889F3BE78266FDA4CFDFF20E47CDECB\BOATPERFORMANCECHART_BUILD.CMAKE.RULE
+setlocal
+cd C:\Users\diana.cinca\Documents\Raymarine
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+call C:\Users\diana.cinca\Documents\Raymarine\build\Desktop_Qt_6_8_0_MSVC2022_64bit_qt_qt6-Debug\.qt\bin\qt_setup_tool_path.bat C:/Qt/6.8.0/msvc2022_64/bin/qmlimportscanner.exe @C:/Users/diana.cinca/Documents/Raymarine/build/Desktop_Qt_6_8_0_MSVC2022_64bit_qt_qt6-Debug/.qt/qml_imports/BoatPerformanceChart_build.rsp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\DIANA.CINCA\DOCUMENTS\RAYMARINE\BUILD\DESKTOP_QT_6_8_0_MSVC2022_64BIT_QT_QT6-DEBUG\CMAKEFILES\6086812498843366C026A211C1B94EFC\BOATPERFORMANCECHART_QMLIMPORTSCAN.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\DIANA.CINCA\DOCUMENTS\RAYMARINE\CMAKELISTS.TXT
+setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SC:/Users/diana.cinca/Documents/Raymarine -BC:/Users/diana.cinca/Documents/Raymarine/build/Desktop_Qt_6_8_0_MSVC2022_64bit_qt_qt6-Debug --check-stamp-file C:/Users/diana.cinca/Documents/Raymarine/build/Desktop_Qt_6_8_0_MSVC2022_64bit_qt_qt6-Debug/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

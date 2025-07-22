@@ -1,0 +1,52 @@
+^C:\USERS\DIANA.CINCA\DOCUMENTS\RAYMARINE\BUILD\DESKTOP_QT_6_8_0_MSVC2022_64BIT_QT_QT6-DEBUG\CMAKEFILES\4D551FF6EACF1A9C8DABBB5AF2068257\MAIN.QML.RULE
+setlocal
+cd C:\Users\diana.cinca\Documents\Raymarine
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E copy C:/Users/diana.cinca/Documents/Raymarine/qml/main.qml C:/Users/diana.cinca/Documents/Raymarine/build/Desktop_Qt_6_8_0_MSVC2022_64bit_qt_qt6-Debug/BoatPerformanceChart/qml/main.qml
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\DIANA.CINCA\DOCUMENTS\RAYMARINE\BUILD\DESKTOP_QT_6_8_0_MSVC2022_64BIT_QT_QT6-DEBUG\CMAKEFILES\4D551FF6EACF1A9C8DABBB5AF2068257\PERFORMANCECHART.QML.RULE
+setlocal
+cd C:\Users\diana.cinca\Documents\Raymarine
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E copy C:/Users/diana.cinca/Documents/Raymarine/qml/PerformanceChart.qml C:/Users/diana.cinca/Documents/Raymarine/build/Desktop_Qt_6_8_0_MSVC2022_64bit_qt_qt6-Debug/BoatPerformanceChart/qml/PerformanceChart.qml
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\DIANA.CINCA\DOCUMENTS\RAYMARINE\BUILD\DESKTOP_QT_6_8_0_MSVC2022_64BIT_QT_QT6-DEBUG\CMAKEFILES\1FA95F9FD34D9E4D578B07FB919E8996\QML.QRC.RULE
+setlocal
+cd C:\Users\diana.cinca\Documents\Raymarine
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E copy C:/Users/diana.cinca/Documents/Raymarine/QML.qrc C:/Users/diana.cinca/Documents/Raymarine/build/Desktop_Qt_6_8_0_MSVC2022_64bit_qt_qt6-Debug/BoatPerformanceChart/QML.qrc
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\DIANA.CINCA\DOCUMENTS\RAYMARINE\CMAKELISTS.TXT
+setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SC:/Users/diana.cinca/Documents/Raymarine -BC:/Users/diana.cinca/Documents/Raymarine/build/Desktop_Qt_6_8_0_MSVC2022_64bit_qt_qt6-Debug --check-stamp-file C:/Users/diana.cinca/Documents/Raymarine/build/Desktop_Qt_6_8_0_MSVC2022_64bit_qt_qt6-Debug/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

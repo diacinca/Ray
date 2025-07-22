@@ -1,0 +1,10 @@
+-I
+C:/Users/diana.cinca/Documents/Raymarine/build/Desktop_Qt_6_8_0_MSVC2022_64bit_qt_qt6-Debug
+-I
+C:/Qt/6.8.0/msvc2022_64/qml
+--resource
+C:/Users/diana.cinca/Documents/Raymarine/build/Desktop_Qt_6_8_0_MSVC2022_64bit_qt_qt6-Debug/.qt/rcc/qmake_BoatPerformanceChart.qrc
+--resource
+C:/Users/diana.cinca/Documents/Raymarine/build/Desktop_Qt_6_8_0_MSVC2022_64bit_qt_qt6-Debug/.qt/rcc/BoatPerformanceChart_raw_qml_0.qrc
+--module
+BoatPerformanceChart

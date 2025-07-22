@@ -1,0 +1,100 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 21,
+                        "durationMicroseconds": 59,
+                        "errorMessage": "Cannot resolve property type  for binding on dataPoints.",
+                        "functionName": "dataPoints",
+                        "line": 11
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 21,
+                        "durationMicroseconds": 6,
+                        "errorMessage": "Cannot resolve property type  for binding on currentRpm.",
+                        "functionName": "currentRpm",
+                        "line": 12
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 26,
+                        "durationMicroseconds": 3,
+                        "errorMessage": "Cannot resolve property type  for binding on currentFuelFlow.",
+                        "functionName": "currentFuelFlow",
+                        "line": 13
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 20,
+                        "durationMicroseconds": 3,
+                        "errorMessage": "Cannot resolve property type  for binding on isEcoMode.",
+                        "functionName": "isEcoMode",
+                        "line": 14
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 17,
+                        "durationMicroseconds": 3,
+                        "errorMessage": "Cannot resolve property type  for binding on minRpm.",
+                        "functionName": "minRpm",
+                        "line": 15
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 17,
+                        "durationMicroseconds": 3,
+                        "errorMessage": "Cannot resolve property type  for binding on maxRpm.",
+                        "functionName": "maxRpm",
+                        "line": 16
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 22,
+                        "durationMicroseconds": 3,
+                        "errorMessage": "Cannot resolve property type  for binding on minFuelFlow.",
+                        "functionName": "minFuelFlow",
+                        "line": 17
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 22,
+                        "durationMicroseconds": 3,
+                        "errorMessage": "Cannot resolve property type  for binding on maxFuelFlow.",
+                        "functionName": "maxFuelFlow",
+                        "line": 18
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 23,
+                        "durationMicroseconds": 3,
+                        "errorMessage": "Cannot resolve property type  for binding on fill.",
+                        "functionName": "fill",
+                        "line": 9
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 21,
+                        "durationMicroseconds": 161,
+                        "errorMessage": "Cannot access value for name chartDataModel",
+                        "functionName": "target",
+                        "line": 21
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 13,
+                        "durationMicroseconds": 45,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: chartRenderer",
+                        "functionName": "onDataChanged",
+                        "line": 22
+                    }
+                ],
+                "filepath": "C:/Users/diana.cinca/Documents/Raymarine/build/Desktop_Qt_6_8_0_MSVC2022_64bit_qt_qt6-Debug/PerformanceChart.qml"
+            }
+        ],
+        "moduleId": "BoatPerformanceChart(BoatPerformanceChart)"
+    }
+]

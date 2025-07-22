@@ -1,0 +1,768 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "BoatPerformanceChart",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Debug-26c584fad54bf1416e18.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart-Debug-c10b542a53c2688687b3.json",
+					"name" : "BoatPerformanceChart",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_autogen-Debug-194c51b402c5bf21f201.json",
+					"name" : "BoatPerformanceChart_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_automoc_json_extraction::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_automoc_json_extraction-Debug-9d04297d7b790cdb8f81.json",
+					"name" : "BoatPerformanceChart_automoc_json_extraction",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_qmlimportscan-Debug-97b9102347ca9c8ee0ff.json",
+					"name" : "BoatPerformanceChart_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_qmllint-Debug-01529c098acf594dd69f.json",
+					"name" : "BoatPerformanceChart_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_qmllint_json-Debug-025d8d9b836dce8ff68b.json",
+					"name" : "BoatPerformanceChart_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_qmllint_module-Debug-f784ad7e938c8097dd4b.json",
+					"name" : "BoatPerformanceChart_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_qmltyperegistration-Debug-d8e6987045085d2cf7d4.json",
+					"name" : "BoatPerformanceChart_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_tooling::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_tooling-Debug-14867879925cd0a2b623.json",
+					"name" : "BoatPerformanceChart_tooling",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Debug-5e473a26401f23c2b582.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_aotstats::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_aotstats-Debug-6ba66ed98d6f798b0d32.json",
+					"name" : "all_aotstats",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-Debug-8dfcb463d42d56483078.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-Debug-78a8a496acc753f88f6d.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_module-Debug-1798e8d9327cbb25e2bf.json",
+					"name" : "all_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-Debug-ae25030bbb71b1f9dbf0.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "module_BoatPerformanceChart_aotstats_targets::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-module_BoatPerformanceChart_aotstats_targets-Debug-128add5bb2abe3a61d31.json",
+					"name" : "module_BoatPerformanceChart_aotstats_targets",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "BoatPerformanceChart",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Release-26c584fad54bf1416e18.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart-Release-bfb84710d8d90c6a7308.json",
+					"name" : "BoatPerformanceChart",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_autogen-Release-194c51b402c5bf21f201.json",
+					"name" : "BoatPerformanceChart_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_automoc_json_extraction::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_automoc_json_extraction-Release-9d04297d7b790cdb8f81.json",
+					"name" : "BoatPerformanceChart_automoc_json_extraction",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_qmlimportscan-Release-97b9102347ca9c8ee0ff.json",
+					"name" : "BoatPerformanceChart_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_qmllint-Release-01529c098acf594dd69f.json",
+					"name" : "BoatPerformanceChart_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_qmllint_json-Release-025d8d9b836dce8ff68b.json",
+					"name" : "BoatPerformanceChart_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_qmllint_module-Release-f784ad7e938c8097dd4b.json",
+					"name" : "BoatPerformanceChart_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_qmltyperegistration-Release-d8e6987045085d2cf7d4.json",
+					"name" : "BoatPerformanceChart_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_tooling::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_tooling-Release-14867879925cd0a2b623.json",
+					"name" : "BoatPerformanceChart_tooling",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Release-5e473a26401f23c2b582.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_aotstats::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_aotstats-Release-6ba66ed98d6f798b0d32.json",
+					"name" : "all_aotstats",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-Release-8dfcb463d42d56483078.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-Release-78a8a496acc753f88f6d.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_module-Release-1798e8d9327cbb25e2bf.json",
+					"name" : "all_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-Release-ae25030bbb71b1f9dbf0.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "module_BoatPerformanceChart_aotstats_targets::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-module_BoatPerformanceChart_aotstats_targets-Release-128add5bb2abe3a61d31.json",
+					"name" : "module_BoatPerformanceChart_aotstats_targets",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-MinSizeRel-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16
+					]
+				}
+			],
+			"name" : "MinSizeRel",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "BoatPerformanceChart",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-26c584fad54bf1416e18.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart-MinSizeRel-798bd16c5108822d0ab5.json",
+					"name" : "BoatPerformanceChart",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_autogen-MinSizeRel-194c51b402c5bf21f201.json",
+					"name" : "BoatPerformanceChart_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_automoc_json_extraction::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_automoc_json_extraction-MinSizeRel-9d04297d7b790cdb8f81.json",
+					"name" : "BoatPerformanceChart_automoc_json_extraction",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_qmlimportscan-MinSizeRel-97b9102347ca9c8ee0ff.json",
+					"name" : "BoatPerformanceChart_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_qmllint-MinSizeRel-01529c098acf594dd69f.json",
+					"name" : "BoatPerformanceChart_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_qmllint_json-MinSizeRel-025d8d9b836dce8ff68b.json",
+					"name" : "BoatPerformanceChart_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_qmllint_module-MinSizeRel-f784ad7e938c8097dd4b.json",
+					"name" : "BoatPerformanceChart_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_qmltyperegistration-MinSizeRel-d8e6987045085d2cf7d4.json",
+					"name" : "BoatPerformanceChart_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_tooling::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_tooling-MinSizeRel-14867879925cd0a2b623.json",
+					"name" : "BoatPerformanceChart_tooling",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-MinSizeRel-5e473a26401f23c2b582.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_aotstats::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_aotstats-MinSizeRel-6ba66ed98d6f798b0d32.json",
+					"name" : "all_aotstats",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-MinSizeRel-8dfcb463d42d56483078.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-MinSizeRel-78a8a496acc753f88f6d.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_module-MinSizeRel-1798e8d9327cbb25e2bf.json",
+					"name" : "all_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-MinSizeRel-ae25030bbb71b1f9dbf0.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "module_BoatPerformanceChart_aotstats_targets::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-module_BoatPerformanceChart_aotstats_targets-MinSizeRel-128add5bb2abe3a61d31.json",
+					"name" : "module_BoatPerformanceChart_aotstats_targets",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-RelWithDebInfo-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "BoatPerformanceChart",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-26c584fad54bf1416e18.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart-RelWithDebInfo-26b1523a2997d443dcd2.json",
+					"name" : "BoatPerformanceChart",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_autogen-RelWithDebInfo-194c51b402c5bf21f201.json",
+					"name" : "BoatPerformanceChart_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_automoc_json_extraction::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_automoc_json_extraction-RelWithDebInfo-9d04297d7b790cdb8f81.json",
+					"name" : "BoatPerformanceChart_automoc_json_extraction",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_qmlimportscan-RelWithDebInfo-97b9102347ca9c8ee0ff.json",
+					"name" : "BoatPerformanceChart_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_qmllint-RelWithDebInfo-01529c098acf594dd69f.json",
+					"name" : "BoatPerformanceChart_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_qmllint_json-RelWithDebInfo-025d8d9b836dce8ff68b.json",
+					"name" : "BoatPerformanceChart_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_qmllint_module-RelWithDebInfo-f784ad7e938c8097dd4b.json",
+					"name" : "BoatPerformanceChart_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_qmltyperegistration-RelWithDebInfo-d8e6987045085d2cf7d4.json",
+					"name" : "BoatPerformanceChart_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoatPerformanceChart_tooling::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoatPerformanceChart_tooling-RelWithDebInfo-14867879925cd0a2b623.json",
+					"name" : "BoatPerformanceChart_tooling",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-RelWithDebInfo-5e473a26401f23c2b582.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_aotstats::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_aotstats-RelWithDebInfo-6ba66ed98d6f798b0d32.json",
+					"name" : "all_aotstats",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-RelWithDebInfo-8dfcb463d42d56483078.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-RelWithDebInfo-78a8a496acc753f88f6d.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_module-RelWithDebInfo-1798e8d9327cbb25e2bf.json",
+					"name" : "all_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-RelWithDebInfo-ae25030bbb71b1f9dbf0.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "module_BoatPerformanceChart_aotstats_targets::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-module_BoatPerformanceChart_aotstats_targets-RelWithDebInfo-128add5bb2abe3a61d31.json",
+					"name" : "module_BoatPerformanceChart_aotstats_targets",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/diana.cinca/Documents/Raymarine/build/Desktop_Qt_6_8_0_MSVC2022_64bit_qt_qt6-Debug",
+		"source" : "C:/Users/diana.cinca/Documents/Raymarine"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

@@ -1,0 +1,5 @@
+module BoatPerformanceChart
+typeinfo BoatPerformanceChart.qmltypes
+prefer :/BoatPerformanceChart/
+PerformanceChart 1.0 qml/PerformanceChart.qml
+

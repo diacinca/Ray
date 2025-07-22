@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/BoatPerformanceChart">
+    <file alias="qmldir">C:/Users/diana.cinca/Documents/Raymarine/build/BoatPerformanceChart/qmldir</file>
+  </qresource>
+</RCC>
+

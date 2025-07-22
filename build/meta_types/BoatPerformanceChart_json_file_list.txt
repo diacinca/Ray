@@ -1,0 +1,2 @@
+C:/Users/diana.cinca/Documents/Raymarine/build/BoatPerformanceChart_autogen/include/../UVLADIE3JM/moc_chartdatamodel.cpp.json
+C:/Users/diana.cinca/Documents/Raymarine/build/BoatPerformanceChart_autogen/include/../UVLADIE3JM/moc_chartrenderer.cpp.json

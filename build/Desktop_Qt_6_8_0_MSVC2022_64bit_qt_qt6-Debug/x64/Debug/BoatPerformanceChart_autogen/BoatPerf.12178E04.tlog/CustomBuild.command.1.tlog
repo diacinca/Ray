@@ -1,0 +1,24 @@
+^C:\USERS\DIANA.CINCA\DOCUMENTS\RAYMARINE\BUILD\DESKTOP_QT_6_8_0_MSVC2022_64BIT_QT_QT6-DEBUG\CMAKEFILES\6086812498843366C026A211C1B94EFC\BOATPERFORMANCECHART_AUTOGEN.RULE
+setlocal
+cd C:\Users\diana.cinca\Documents\Raymarine\build\Desktop_Qt_6_8_0_MSVC2022_64bit_qt_qt6-Debug
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen C:/Users/diana.cinca/Documents/Raymarine/build/Desktop_Qt_6_8_0_MSVC2022_64bit_qt_qt6-Debug/CMakeFiles/BoatPerformanceChart_autogen.dir/AutogenInfo.json Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\DIANA.CINCA\DOCUMENTS\RAYMARINE\CMAKELISTS.TXT
+setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SC:/Users/diana.cinca/Documents/Raymarine -BC:/Users/diana.cinca/Documents/Raymarine/build/Desktop_Qt_6_8_0_MSVC2022_64bit_qt_qt6-Debug --check-stamp-file C:/Users/diana.cinca/Documents/Raymarine/build/Desktop_Qt_6_8_0_MSVC2022_64bit_qt_qt6-Debug/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
