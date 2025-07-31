@@ -15,7 +15,7 @@ ChartRenderer::ChartRenderer(QQuickItem *parent)
     , m_minRpm(0.0)
     , m_maxRpm(6000.0)
     , m_minFuelFlow(0.0)
-    , m_maxFuelFlow(50.0)
+    , m_maxFuelFlow(80.0)
 {
     setAntialiasing(true);
 }
@@ -121,9 +121,9 @@ void ChartRenderer::drawGrid(QPainter *painter, const QRectF &chartRect)
 {
     painter->setPen(QPen(QColor(100, 100, 100), 1, Qt::SolidLine));
 
-    // Only draw horizontal grid lines (Fuel Flow) - removed vertical RPM lines
-    for (int flow = 0; flow <= 50; flow += 10) {
-        double y = chartRect.bottom() - (flow / 50.0) * chartRect.height();
+    // Only draw horizontal grid lines (Fuel Flow) - updated for 0-80 range with 20 intervals
+    for (int flow = 0; flow <= 80; flow += 20) {
+        double y = chartRect.bottom() - (flow / 80.0) * chartRect.height();
         painter->drawLine(QPointF(chartRect.left(), y), 
                          QPointF(chartRect.right(), y));
     }
@@ -145,9 +145,9 @@ void ChartRenderer::drawAxes(QPainter *painter, const QRectF &chartRect)
                          QString::number(rpm));
     }
 
-    // Y-axis labels (Fuel Flow) - moved to right side with white color
-    for (int flow = 0; flow <= 50; flow += 10) {
-        double y = chartRect.bottom() - (flow / 50.0) * chartRect.height();
+    // Y-axis labels (Fuel Flow) - moved to right side with white color, updated for 0-80 range
+    for (int flow = 0; flow <= 80; flow += 20) {
+        double y = chartRect.bottom() - (flow / 80.0) * chartRect.height();
         painter->drawText(QPointF(chartRect.right() + 10, y + 5), 
                          QString::number(flow));
     }
@@ -264,22 +264,6 @@ void ChartRenderer::drawCurrentPoint(QPainter *painter, const QRectF &chartRect)
     painter->setBrush(QBrush(pointColor));
     painter->setPen(QPen(pointColor, 1)); // Use same color for border
     painter->drawEllipse(actualCurrentPoint, 6, 6); // Draw at actual current fuel flow position
-
-    // Draw current value label
-    painter->setFont(QFont("Arial", 12, QFont::Bold));
-    painter->setPen(QPen(Qt::white));
-    QString label = QString("RPM: %1\nMedian: %2 L/h\nCurrent: %3 L/h\n%4")
-                    .arg(QString::number(m_currentRpm, 'f', 0))
-                    .arg(QString::number(medianFuelFlowAtCurrentRpm, 'f', 1))
-                    .arg(QString::number(m_currentFuelFlow, 'f', 1))
-                    .arg(m_isEcoMode ? "ECO MODE" : "NORMAL");
-    
-    QPointF labelPos = actualCurrentPoint + QPointF(15, -40);
-    if (labelPos.x() + 120 > chartRect.right()) {
-        labelPos.setX(actualCurrentPoint.x() - 120);
-    }
-    
-    painter->drawText(labelPos, label);
 }
 
 void ChartRenderer::drawLegend(QPainter *painter, const QRectF &chartRect)

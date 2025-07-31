@@ -66,21 +66,55 @@ void ChartDataModel::generateSampleData()
     beginResetModel();
     m_dataPoints.clear();
 
+    // Initialize random number generator for realistic variations
+    auto *generator = QRandomGenerator::global();
+    
     // Generate data points every 50 RPM for finer granularity
     for (int rpm = 0; rpm <= 6000; rpm += 50) {
         DataPoint point;
         point.rpm = rpm;
 
-        // Base fuel flow calculation (quadratic relationship with RPM)
-        double baseFuelFlow = 0.5 + (rpm / 6000.0) * 45.0 + qPow(rpm / 6000.0, 2) * 5.0;
+        // Base fuel flow calculation (quadratic relationship with RPM) - further reduced to ensure max stays below 80
+        // Even more conservative scaling to guarantee we stay under 80 with all variations and penalties
+        double baseFuelFlow = 0.5 + (rpm / 6000.0) * 25.0 + qPow(rpm / 6000.0, 2) * 10.0; // Max ~36 at 6000 RPM
         
-        // Add some variation for min/max
-        double variation = baseFuelFlow * 0.2; // 20% variation
-        point.minFuelFlow = qMax(0.0, baseFuelFlow - variation);
-        point.maxFuelFlow = qMin(50.0, baseFuelFlow + variation);
+        // Create more realistic, non-uniform variations - further reduced ranges
+        // Lower RPM has smaller absolute variations, higher RPM has larger variations
+        double rpmFactor = rpm / 6000.0; // 0 to 1
         
-        // Set median to be clearly between min and max (closer to optimal efficiency)
-        point.medianFuelFlow = point.minFuelFlow + (point.maxFuelFlow - point.minFuelFlow) * 0.4;
+        // Much more conservative variation ranges
+        double minVariationPercent = 0.05 + (rpmFactor * 0.15) + (generator->generateDouble() - 0.5) * 0.1; // 5-20% + random
+        double maxVariationPercent = 0.08 + (rpmFactor * 0.20) + (generator->generateDouble() - 0.5) * 0.12; // 8-28% + random
+        
+        // Ensure max variation is always greater than min variation
+        if (maxVariationPercent <= minVariationPercent) {
+            maxVariationPercent = minVariationPercent + 0.05 + generator->generateDouble() * 0.08;
+        }
+        
+        // Apply variations with minimal randomness in the base values
+        double baseRandomness = (generator->generateDouble() - 0.5) * 0.05; // ±2.5% randomness in base
+        double adjustedBase = baseFuelFlow * (1.0 + baseRandomness);
+        
+        point.minFuelFlow = qMax(0.0, adjustedBase * (1.0 - minVariationPercent));
+        point.maxFuelFlow = adjustedBase * (1.0 + maxVariationPercent);
+        
+        // Add some non-linearity to the engine efficiency curve at certain RPM ranges - very conservative
+        if (rpm > 1500 && rpm < 3000) {
+            // Sweet spot - tighter efficiency range
+            double efficiencyBonus = 0.95 + generator->generateDouble() * 0.05; // 95-100% efficiency
+            point.minFuelFlow *= efficiencyBonus;
+        } else if (rpm > 4500) {
+            // High RPM - less efficient, wider spread - very conservative penalty
+            double inefficiencyPenalty = 1.02 + generator->generateDouble() * 0.08; // 102-110% penalty (much reduced)
+            point.maxFuelFlow *= inefficiencyPenalty;
+        }
+        
+        // Final safety check - absolutely ensure max value is below 80
+        point.maxFuelFlow = qMin(75.0, point.maxFuelFlow); // Cap at 75 for extra safety margin
+        
+        // Set median to be positioned realistically (not always at 40%)
+        double medianPosition = 0.3 + generator->generateDouble() * 0.4; // 30-70% between min and max
+        point.medianFuelFlow = point.minFuelFlow + (point.maxFuelFlow - point.minFuelFlow) * medianPosition;
 
         // Current fuel flow will be updated based on current RPM
         point.currentFuelFlow = baseFuelFlow;

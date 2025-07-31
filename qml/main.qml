@@ -53,6 +53,7 @@ ApplicationWindow {
 
                 ColumnLayout {
                     anchors.fill: parent
+                    spacing: 8
 
                     Slider {
                         id: rpmSlider
@@ -71,6 +72,24 @@ ApplicationWindow {
                         text: "RPM: " + Math.round(rpmSlider.value)
                         font.pixelSize: 16
                         font.bold: true
+                    }
+                    
+                    // Compact current fuel flow display
+                    Rectangle {
+                        Layout.fillWidth: true
+                        Layout.preferredHeight: 35
+                        color: chartDataModel.isEcoMode ? "#d5f4e6" : "#fdeaa7"
+                        border.color: chartDataModel.isEcoMode ? "#27ae60" : "#f39c12"
+                        border.width: 1
+                        radius: 6
+                        
+                        Text {
+                            anchors.centerIn: parent
+                            text: "Fuel: " + chartDataModel.currentFuelFlow.toFixed(1) + " L/h"
+                            font.pixelSize: 14
+                            font.bold: true
+                            color: chartDataModel.isEcoMode ? "#27ae60" : "#f39c12"
+                        }
                     }
                 }
             }
