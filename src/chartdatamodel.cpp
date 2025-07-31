@@ -66,8 +66,8 @@ void ChartDataModel::generateSampleData()
     beginResetModel();
     m_dataPoints.clear();
 
-    // Generate data points every 100 RPM
-    for (int rpm = 0; rpm <= 6000; rpm += 100) {
+    // Generate data points every 50 RPM for finer granularity
+    for (int rpm = 0; rpm <= 6000; rpm += 50) {
         DataPoint point;
         point.rpm = rpm;
 

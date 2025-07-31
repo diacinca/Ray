@@ -30,10 +30,10 @@ void ChartRenderer::paint(QPainter *painter)
     // Fill background with black
     painter->fillRect(boundingRect(), Qt::black);
     
-    // Define chart area (excluding margins and legend)
+    // Define chart area (excluding margins only - no legend)
     QRectF chartRect(MARGIN, MARGIN, 
                      width() - 2 * MARGIN, 
-                     height() - 2 * MARGIN - LEGEND_HEIGHT);
+                     height() - 2 * MARGIN);
 
     // Draw chart components
     drawGrid(painter, chartRect);
@@ -43,8 +43,6 @@ void ChartRenderer::paint(QPainter *painter)
     
     // Draw median line separately to ensure it's always visible
     drawMedianLine(painter, chartRect);
-    
-    drawLegend(painter, chartRect);
 }
 
 void ChartRenderer::setDataPoints(const QVariantList &dataPoints)
@@ -121,16 +119,9 @@ void ChartRenderer::setMaxFuelFlow(double maxFuelFlow)
 
 void ChartRenderer::drawGrid(QPainter *painter, const QRectF &chartRect)
 {
-    painter->setPen(QPen(QColor(100, 100, 100), 1, Qt::DotLine));
+    painter->setPen(QPen(QColor(100, 100, 100), 1, Qt::SolidLine));
 
-    // Vertical grid lines (RPM)
-    for (int rpm = 0; rpm <= 6000; rpm += 1000) {
-        double x = chartRect.left() + (rpm / 6000.0) * chartRect.width();
-        painter->drawLine(QPointF(x, chartRect.top()), 
-                         QPointF(x, chartRect.bottom()));
-    }
-
-    // Horizontal grid lines (Fuel Flow)
+    // Only draw horizontal grid lines (Fuel Flow) - removed vertical RPM lines
     for (int flow = 0; flow <= 50; flow += 10) {
         double y = chartRect.bottom() - (flow / 50.0) * chartRect.height();
         painter->drawLine(QPointF(chartRect.left(), y), 
@@ -140,32 +131,33 @@ void ChartRenderer::drawGrid(QPainter *painter, const QRectF &chartRect)
 
 void ChartRenderer::drawAxes(QPainter *painter, const QRectF &chartRect)
 {
-    painter->setPen(QPen(Qt::white, 2));
     painter->setFont(QFont("Arial", 10));
 
-    // X-axis
+    // X-axis in dark grey
+    painter->setPen(QPen(QColor(80, 80, 80), 2));
     painter->drawLine(chartRect.bottomLeft(), chartRect.bottomRight());
-    
-    // Y-axis
-    painter->drawLine(chartRect.bottomLeft(), chartRect.topLeft());
 
-    // X-axis labels (RPM)
+    // X-axis labels (RPM) - white color
+    painter->setPen(QPen(Qt::white, 1));
     for (int rpm = 0; rpm <= 6000; rpm += 1000) {
         double x = chartRect.left() + (rpm / 6000.0) * chartRect.width();
         painter->drawText(QPointF(x - 15, chartRect.bottom() + 20), 
                          QString::number(rpm));
     }
 
-    // Y-axis labels (Fuel Flow)
+    // Y-axis labels (Fuel Flow) - moved to right side with white color
     for (int flow = 0; flow <= 50; flow += 10) {
         double y = chartRect.bottom() - (flow / 50.0) * chartRect.height();
-        painter->drawText(QPointF(chartRect.left() - 40, y + 5), 
+        painter->drawText(QPointF(chartRect.right() + 10, y + 5), 
                          QString::number(flow));
     }
 
-    // Axis titles
+    // Axis titles - dark grey color
+    painter->setPen(QPen(QColor(80, 80, 80), 1));
+    
+    // Move Fuel Flow title to right side
     painter->save();
-    painter->translate(chartRect.left() - 50, chartRect.center().y());
+    painter->translate(chartRect.right() + 60, chartRect.center().y());
     painter->rotate(-90);
     painter->drawText(QPointF(-50, 0), "Fuel Flow (L/h)");
     painter->restore();
@@ -179,55 +171,43 @@ void ChartRenderer::drawData(QPainter *painter, const QRectF &chartRect)
     if (m_dataPoints.size() < 2)
         return;
 
-    // Prepare paths for different data series
-    QPainterPath minPath, maxPath, medianPath;
-    QPolygonF fillPolygon;
-
+    // Calculate width of each rectangle based on RPM range - now 50 RPM per rectangle
+    double rpmRange = m_maxRpm - m_minRpm;
+    double rectWidth = chartRect.width() / (rpmRange / 50.0); // 50 RPM per rectangle
+    
+    // Enable antialiasing for smooth rounded corners
+    painter->setRenderHint(QPainter::Antialiasing, true);
+    
     for (const auto &pointVar : m_dataPoints) {
         QVariantMap point = pointVar.toMap();
         double rpm = point["rpm"].toDouble();
         double minFlow = point["minFuelFlow"].toDouble();
         double maxFlow = point["maxFuelFlow"].toDouble();
-        double medianFlow = point["medianFuelFlow"].toDouble();
-
-        QPointF minPoint = mapToChart(rpm, minFlow, chartRect);
-        QPointF maxPoint = mapToChart(rpm, maxFlow, chartRect);
-        QPointF medianPoint = mapToChart(rpm, medianFlow, chartRect);
-
-        if (minPath.isEmpty()) {
-            minPath.moveTo(minPoint);
-            maxPath.moveTo(maxPoint);
-            medianPath.moveTo(medianPoint);
-            fillPolygon << minPoint;
-        } else {
-            minPath.lineTo(minPoint);
-            maxPath.lineTo(maxPoint);
-            medianPath.lineTo(medianPoint);
-            fillPolygon << minPoint;
-        }
+        
+        // Calculate rectangle position and dimensions
+        double x = chartRect.left() + (rpm / rpmRange) * chartRect.width() - rectWidth / 2;
+        double minY = chartRect.bottom() - (minFlow / (m_maxFuelFlow - m_minFuelFlow)) * chartRect.height();
+        double maxY = chartRect.bottom() - (maxFlow / (m_maxFuelFlow - m_minFuelFlow)) * chartRect.height();
+        double rectHeight = minY - maxY;
+        
+        // Create the rectangle with 1.5 pixel gap on each side (3 pixels total gap between rectangles)
+        double gap = 1.5; // 1.5 pixels gap on each side
+        QRectF rect(x + gap, maxY, rectWidth - (gap * 2), rectHeight);
+        
+        // Create gradient for modern look - dark grey with 50% transparency
+        QLinearGradient gradient(rect.topLeft(), rect.bottomLeft());
+        gradient.setColorAt(0, QColor(80, 80, 80, 128));   // 50% transparent dark grey
+        gradient.setColorAt(0.5, QColor(70, 70, 70, 128)); // 50% transparent darker grey
+        gradient.setColorAt(1, QColor(60, 60, 60, 128));   // 50% transparent darkest grey
+        
+        // Draw rectangle with gradient and rounded corners (smaller radius for smaller rectangles)
+        painter->setBrush(QBrush(gradient));
+        painter->setPen(QPen(QColor(50, 50, 50, 128), 1)); // 50% transparent dark border
+        painter->drawRoundedRect(rect, 2, 2); // 2px rounded corners for smaller rectangles
     }
-
-    // Create fill polygon for min-max range
-    for (int i = m_dataPoints.size() - 1; i >= 0; --i) {
-        QVariantMap point = m_dataPoints[i].toMap();
-        double rpm = point["rpm"].toDouble();
-        double maxFlow = point["maxFuelFlow"].toDouble();
-        fillPolygon << mapToChart(rpm, maxFlow, chartRect);
-    }
-
-    // Draw fill area (min-max range) - transparent blue
-    painter->setBrush(QBrush(QColor(0, 100, 255, 80)));
-    painter->setPen(Qt::NoPen);
-    painter->drawPolygon(fillPolygon);
-
-    // Draw min line in white
-    painter->setPen(QPen(Qt::white, 2, Qt::DashLine));
+    
+    // Reset brush for other elements
     painter->setBrush(Qt::NoBrush);
-    painter->drawPath(minPath);
-
-    // Draw max line in white
-    painter->setPen(QPen(Qt::white, 2, Qt::DashLine));
-    painter->drawPath(maxPath);
 }
 
 
@@ -273,19 +253,17 @@ void ChartRenderer::drawCurrentPoint(QPainter *painter, const QRectF &chartRect)
         medianFuelFlowAtCurrentRpm = m_dataPoints[closestIndex].toMap()["medianFuelFlow"].toDouble();
     }
     
-    // Map the current RPM and median fuel flow to chart coordinates
+    // Map the current RPM and median fuel flow to chart coordinates for reference
     QPointF currentPointOnMedian = mapToChart(m_currentRpm, medianFuelFlowAtCurrentRpm, chartRect);
     
-    // Draw vertical line at current RPM
-    painter->setPen(QPen(Qt::lightGray, 2, Qt::DotLine));
-    painter->drawLine(QPointF(currentPointOnMedian.x(), chartRect.top()),
-                     QPointF(currentPointOnMedian.x(), chartRect.bottom()));
-
-    // Draw current point on the median line
+    // Map the current RPM and ACTUAL current fuel flow to chart coordinates
+    QPointF actualCurrentPoint = mapToChart(m_currentRpm, m_currentFuelFlow, chartRect);
+    
+    // Draw current point at the actual fuel flow position - smaller dot without white border
     QColor pointColor = m_isEcoMode ? QColor(0, 200, 0) : QColor(255, 150, 0);
     painter->setBrush(QBrush(pointColor));
-    painter->setPen(QPen(Qt::white, 3));
-    painter->drawEllipse(currentPointOnMedian, 10, 10);
+    painter->setPen(QPen(pointColor, 1)); // Use same color for border
+    painter->drawEllipse(actualCurrentPoint, 6, 6); // Draw at actual current fuel flow position
 
     // Draw current value label
     painter->setFont(QFont("Arial", 12, QFont::Bold));
@@ -296,9 +274,9 @@ void ChartRenderer::drawCurrentPoint(QPainter *painter, const QRectF &chartRect)
                     .arg(QString::number(m_currentFuelFlow, 'f', 1))
                     .arg(m_isEcoMode ? "ECO MODE" : "NORMAL");
     
-    QPointF labelPos = currentPointOnMedian + QPointF(15, -40);
+    QPointF labelPos = actualCurrentPoint + QPointF(15, -40);
     if (labelPos.x() + 120 > chartRect.right()) {
-        labelPos.setX(currentPointOnMedian.x() - 120);
+        labelPos.setX(actualCurrentPoint.x() - 120);
     }
     
     painter->drawText(labelPos, label);
@@ -314,12 +292,17 @@ void ChartRenderer::drawLegend(QPainter *painter, const QRectF &chartRect)
     double itemWidth = legendRect.width() / 4;
     double y = legendRect.top() + 20;
 
-    // Min/Max range
-    painter->setBrush(QBrush(QColor(0, 100, 255, 80)));
-    painter->setPen(QPen(Qt::white, 2, Qt::DashLine));
-    painter->drawRect(QRectF(legendRect.left(), y, 20, 10));
+    // Min/Max range - show as a small rectangle with dark grey gradient and rounded corners
+    QLinearGradient legendGradient(QPointF(legendRect.left(), y), 
+                                   QPointF(legendRect.left(), y + 10));
+    legendGradient.setColorAt(0, QColor(80, 80, 80, 128));   // 50% transparent dark grey
+    legendGradient.setColorAt(0.5, QColor(70, 70, 70, 128)); // 50% transparent darker grey
+    legendGradient.setColorAt(1, QColor(60, 60, 60, 128));   // 50% transparent darkest grey
+    painter->setBrush(QBrush(legendGradient));
+    painter->setPen(QPen(QColor(50, 50, 50, 128), 1)); // 50% transparent dark border
+    painter->drawRoundedRect(QRectF(legendRect.left(), y, 20, 10), 2, 2);
     painter->setPen(QPen(Qt::white));
-    painter->drawText(QPointF(legendRect.left() + 25, y + 10), "Min/Max Range");
+    painter->drawText(QPointF(legendRect.left() + 25, y + 10), "Fuel Range (50 RPM blocks)");
 
     // Median line
     painter->setPen(QPen(Qt::white, 3));
@@ -374,8 +357,8 @@ void ChartRenderer::drawMedianLine(QPainter *painter, const QRectF &chartRect)
         }
     }
     
-    // Draw median line in white
+    // Draw median line in white - made thinner
     painter->setBrush(Qt::NoBrush);
-    painter->setPen(QPen(Qt::white, 3, Qt::SolidLine));
+    painter->setPen(QPen(Qt::white, 1, Qt::SolidLine));
     painter->drawPath(medianPath);
 }
