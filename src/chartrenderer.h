@@ -58,6 +58,7 @@ private:
     void drawAxes(QPainter *painter, const QRectF &chartRect);
     void drawData(QPainter *painter, const QRectF &chartRect);
     void drawCurrentPoint(QPainter *painter, const QRectF &chartRect);
+    void drawMedianLine(QPainter *painter, const QRectF &chartRect);
     void drawLegend(QPainter *painter, const QRectF &chartRect);
     
     QPointF mapToChart(double rpm, double fuelFlow, const QRectF &chartRect) const;

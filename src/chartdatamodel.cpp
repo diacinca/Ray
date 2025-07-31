@@ -78,7 +78,9 @@ void ChartDataModel::generateSampleData()
         double variation = baseFuelFlow * 0.2; // 20% variation
         point.minFuelFlow = qMax(0.0, baseFuelFlow - variation);
         point.maxFuelFlow = qMin(50.0, baseFuelFlow + variation);
-        point.medianFuelFlow = baseFuelFlow;
+        
+        // Set median to be clearly between min and max (closer to optimal efficiency)
+        point.medianFuelFlow = point.minFuelFlow + (point.maxFuelFlow - point.minFuelFlow) * 0.4;
 
         // Current fuel flow will be updated based on current RPM
         point.currentFuelFlow = baseFuelFlow;
@@ -163,6 +165,8 @@ double ChartDataModel::interpolateFuelFlow(double rpm, bool useMedian) const
     if (useMedian) {
         return p1.medianFuelFlow + ratio * (p2.medianFuelFlow - p1.medianFuelFlow);
     } else {
-        return p1.medianFuelFlow + ratio * (p2.medianFuelFlow - p1.medianFuelFlow);
+        // For current fuel flow, interpolate the median but add some variation
+        double baseFuelFlow = p1.medianFuelFlow + ratio * (p2.medianFuelFlow - p1.medianFuelFlow);
+        return baseFuelFlow;
     }
 }
